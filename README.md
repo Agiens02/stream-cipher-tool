@@ -50,6 +50,6 @@ python MainWindow.py
 
 # 注意
 - 管理界面密码默认0000，可在`database/config.yaml`中修改
-- 
+- 图标来源[阿里矢量图标库](https://www.iconfont.cn/)
 
 
