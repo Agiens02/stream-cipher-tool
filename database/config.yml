@@ -1,0 +1,10 @@
+database:
+  database_type: "sqlite"
+  #数据库连接信息
+  mongodb:
+    url: "mongodb://127.0.0.1:27017"
+    db_name: "user_database"
+  sqlite:
+    path: "res/user.db"
+  #管理界面密码
+  admin_password: "0000"
