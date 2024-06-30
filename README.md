@@ -56,3 +56,4 @@ python MainWindow.py
 - ChaCha20只支持32位或64位十六进制密钥
 
 
+
