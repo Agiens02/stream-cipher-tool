@@ -8,7 +8,7 @@
 
 - [MongoDB](https://www.mongodb.com/try/download/community)（可选安装，但需要在`database/config.yaml`中指定数据库）
 
-# 演示
+# 界面
 
 <img src="./docs/encrypt.png" title="" alt="encrypt.png" style="zoom:67%;">
 <img src="./docs/decrypt.png" title="" alt="decrypt.png" style="zoom:67%;">
@@ -16,30 +16,28 @@
 
 
 # 使用
+1. 克隆本项目或[下载压缩包](https://github.com/Agiens02/stream-cipher-tool/archive/refs/heads/master.zip)
 
-1. 创建虚拟环境
+```Shell
+git clone https://github.com/Agiens02/stream-cipher-tool.git
+cd stream-cipher-tool
+```
+2. 创建虚拟环境
 
 ```Shell
 conda create -n stream-cipher-tool python==3.8
 ```
 
-2. 安装依赖
+3. 安装依赖
 
 ```Shell
-pip install -r requirement.txt -i https://pypi.tuna.tsinghua.edu.cn/simple/
+pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple/
 ```
 
-3. 激活虚拟环境
+4. 激活虚拟环境
 
 ```Shell
 conda activate stream-cipher-tool
-```
-
-4. 克隆本项目或[下载压缩包](https://github.com/Agiens02/stream-cipher-tool/archive/refs/heads/master.zip)
-
-```Shell
-git clone https://github.com/Agiens02/stream-cipher-tool.git
-cd stream-cipher-tool
 ```
 
 5. 运行主界面
@@ -50,6 +48,9 @@ python MainWindow.py
 
 # 注意
 - 管理界面密码默认0000，可在`database/config.yaml`中修改
-- 
+- 图标来源[阿里矢量图标库](https://www.iconfont.cn/)
+- A5只支持16位十六进制密钥
+- RC4支持任意长度字符串密钥
+- ChaCha20只支持32位或64位十六进制密钥
 
 

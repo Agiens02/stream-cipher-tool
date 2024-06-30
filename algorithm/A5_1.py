@@ -1,7 +1,6 @@
 import base64
 
 
-
 class A5_1:
     def __init__(self):
         self.R1 = [0] * 19
@@ -10,10 +9,7 @@ class A5_1:
 
     def initialize_registers(self, key):
         if isinstance(key, str):
-            if key.startswith('0x') or key.startswith('0X'):
-                key = int(key, 16)
-            else:
-                key = int(key)
+            key = int(key, 16)
         if not isinstance(key, int):
             raise TypeError("密钥必须为整数或十六进制字符串")
 
@@ -60,12 +56,12 @@ class A5_1:
         keystream = self._generate_keystream(len(plaintext_bits))
         ciphertext_bits = [(p ^ k) for p, k in zip(plaintext_bits, keystream)]
         ciphertext = int(''.join(map(str, ciphertext_bits)), 2).to_bytes((len(ciphertext_bits) + 7) // 8, 'big')
-        ciphertext=base64.b64encode(ciphertext).decode('utf-8')
+        ciphertext = base64.b64encode(ciphertext).decode('utf-8')
         return ciphertext
 
     def decrypt(self, ciphertext, key):
         self.initialize_registers(key)
-        ciphertext=base64.b64decode(ciphertext)
+        ciphertext = base64.b64decode(ciphertext)
         ciphertext_bits = [int(bit) for bit in bin(int.from_bytes(ciphertext, 'big'))[2:].zfill(len(ciphertext) * 8)]
         keystream = self._generate_keystream(len(ciphertext_bits))
         plaintext_bits = [(c ^ k) for c, k in zip(ciphertext_bits, keystream)]
