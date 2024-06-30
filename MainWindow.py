@@ -1,5 +1,6 @@
 import argparse
 import functools
+import re
 import sys
 from datetime import datetime
 
@@ -758,7 +759,7 @@ class CryptoApp(QMainWindow):
             try:
                 ciphertext = encrypt_a5(plaintext, key)
             except Exception as e:
-                self.show_status_message('加密失败，请检查密钥和算法是否对应')
+                self.show_status_message('加密失败，请检查密钥和算法')
                 return
         elif algorithm == 'RC4':
             try:
@@ -803,11 +804,10 @@ class CryptoApp(QMainWindow):
             self.show_status_message("未输入密文")
             return
         if (len(key) != 18) and algorithm == 'A5':
-            if not key.startswith('0x'):
+            if key.startswith('0x'):
                 self.show_status_message("A5密钥长度错误")
             return
         try:
-
             if algorithm == 'A5':
                 plaintext = decrypt_a5(ciphertext, key)
             elif algorithm == 'RC4':
