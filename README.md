@@ -8,7 +8,7 @@
 
 - [MongoDB](https://www.mongodb.com/try/download/community)（可选安装，但需要在`database/config.yaml`中指定数据库）
 
-# 演示
+# 界面
 
 <img src="./docs/encrypt.png" title="" alt="encrypt.png" style="zoom:67%;">
 <img src="./docs/decrypt.png" title="" alt="decrypt.png" style="zoom:67%;">
